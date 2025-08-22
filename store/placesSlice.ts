@@ -3,10 +3,13 @@ import { places, TouristPlace } from "../Utils/Places";
 
 interface TouristState {
   places: TouristPlace[];
+  visitedPlaces:TouristPlace[]
 }
 
 const initialState: TouristState = {
-  places: places, // preloaded on app start
+  places: places,
+  visitedPlaces:[]
+   // preloaded on app start
 };
 
 const placesSlice = createSlice({
@@ -17,13 +20,23 @@ const placesSlice = createSlice({
       const place = state.places.find((p) => p.id === action.payload);
       if (place) {
         place.visited = !place.visited;
+
+        if (place.visited) {
+          // ✅ add if not already in visitedPlaces
+          if (!state.visitedPlaces.find((p) => p.id === place.id)) {
+            state.visitedPlaces.push(place);
+          }
+        } else {
+          // ❌ remove if unvisited
+          state.visitedPlaces = state.visitedPlaces.filter(
+            (p) => p.id !== place.id
+          );
+        }
       }
     },
-    resetVisited: (state) => {
-      state.places.forEach((p) => (p.visited = false));
-    },
+   
   },
 });
 
-export const { toggleVisited, resetVisited } = placesSlice.actions;
+export const { toggleVisited, } = placesSlice.actions;
 export default placesSlice.reducer;

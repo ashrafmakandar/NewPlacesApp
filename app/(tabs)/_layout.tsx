@@ -5,6 +5,7 @@ import { store } from "../../store";
 
 export default function RootLayout() {
   return  <Provider store={store}>
+   
     <Tabs screenOptions={{
       headerShown:false,
       tabBarActiveTintColor:"blue",
