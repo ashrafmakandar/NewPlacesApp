@@ -1,4 +1,4 @@
-import Ionicons from '@expo/vector-icons';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { Tabs } from "expo-router";
 import { Provider } from "react-redux";
 import { store } from "../../store";
@@ -12,15 +12,22 @@ export default function RootLayout() {
       tabBarInactiveTintColor:"#839288"
     }}>
       <Tabs.Screen 
+      
+      
+
     options={{
       title:"Home",
-          tabBarIcon: ({ color,size }) => <Ionicons size={size} name="home" color={color} />,
+      tabBarLabel:"Home",
+      
+    
+          tabBarIcon: ({ focused,color,size }) => <Ionicons size={size} name={focused?"home":"home-outline"} color={color} />,
     }}
       name="Home"></Tabs.Screen>
          <Tabs.Screen
           options={{
       title:"Visited",
-          tabBarIcon: ({ color,size }) => <Ionicons size={size} name="heart" color={color} />,
+          tabBarLabel:"Visited",
+          tabBarIcon: ({ color,size,focused }) => <Ionicons size={size} name="heart" color={color} />,
     
     }}
          

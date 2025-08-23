@@ -47,6 +47,7 @@ export default function Home() {
         style={{ margin: 10,borderRadius:12,borderWidth:1,borderColor:"#323232",padding:10 }}>
           <Image source={{ uri: item.image_url }} style={{  height: 200, borderRadius: 8 }}
           resizeMode="cover"
+          defaultSource={require("../assets/images/icon.png")}
           />
           <TouchableOpacity
            onPress={() => dispatch(toggleVisited(item.id))}
