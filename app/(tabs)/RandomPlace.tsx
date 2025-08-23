@@ -4,6 +4,7 @@ import { Image, Text, TouchableOpacity, View, } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
+import Header from "../components/Header";
 
 const RandomPlace = () => {
      const places = useSelector((state: RootState) => state.tourist.places);
@@ -18,10 +19,11 @@ const RandomPlace = () => {
   };
   return (
     <SafeAreaView>
-       <Text style={{
-           textAlign:"center",fontSize:21,fontWeight:"bold",paddingTop:"5%",marginBottom:"2%"
-       }}>Random Place Suggestion </Text>
 
+
+<Header
+text="Random Place Suggestion "
+/>
       <TouchableOpacity style={{
         padding:10,margin:10,height:56,backgroundColor:"#9898ed",borderRadius:12,alignContent:"center",justifyContent:"center"
 
