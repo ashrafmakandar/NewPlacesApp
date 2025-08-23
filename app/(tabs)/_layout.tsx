@@ -22,7 +22,9 @@ export default function RootLayout() {
     
           tabBarIcon: ({ focused,color,size }) => <Ionicons size={size} name={focused?"home":"home-outline"} color={color} />
     }}
-      name="Home"></Tabs.Screen>
+      name="Home"
+      
+      ></Tabs.Screen>
          <Tabs.Screen
           options={{
       title:"Visited",
