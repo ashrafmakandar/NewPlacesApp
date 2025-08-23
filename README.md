@@ -1,0 +1,1 @@
+An app showing historical places to see , can toggle visit status ,check out random places for fun. Built with React Native in Typescript , used mock data for historical places and used redux toolkit for state managagment.
