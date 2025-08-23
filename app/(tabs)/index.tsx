@@ -22,9 +22,7 @@ export default function Home() {
       }}
     >
 
-       {/* <Text style={{
-              textAlign:"center",fontSize:21,fontWeight:"bold",paddingTop:"5%",marginBottom:"2%"
-            }}>Places to see </Text> */}
+      
             <Header
             text={"Places to see "}
             />
