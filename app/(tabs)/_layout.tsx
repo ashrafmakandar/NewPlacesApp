@@ -22,28 +22,28 @@ export default function RootLayout() {
     
           tabBarIcon: ({ focused,color,size }) => <Ionicons size={size} name={focused?"home":"home-outline"} color={color} />
     }}
-      name="Home"
+      name="index"
       
       ></Tabs.Screen>
          <Tabs.Screen
           options={{
       title:"Visited",
           tabBarLabel:"Visited",
-          tabBarIcon: ({ color,size,focused }) => <Ionicons size={size} name="heart" color={color} />,
+          tabBarIcon: ({ color,size,focused }) => <Ionicons size={size} name={focused?"heart":"heart-outline"} color={color} />,
     
     }}
          
-         name="Visited"></Tabs.Screen>
-{/* 
+         name="visited"></Tabs.Screen>
+
                <Tabs.Screen
           options={{
-      title:"RandomPlace",
-          tabBarLabel:"RandomPlace",
-          tabBarIcon: ({ color,size,focused }) => <Ionicons size={size} name="heart" color={color} />,
+      title:"Random Place",
+          tabBarLabel:"Random Place",
+          tabBarIcon: ({ color,size,focused }) => <Ionicons size={size} name={focused?"refresh-circle":"refresh-circle-outline"} color={color} />,
     
     }}
          
-         name="RandomPlace"></Tabs.Screen> */}
+         name="RandomPlace"></Tabs.Screen>
     </Tabs>
     </Provider>
 }
